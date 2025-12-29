@@ -2,6 +2,8 @@
 
 {% block content %}
 <div class="desktop-grid">
+
+    
     
     <div class="widget clock-widget">
         <div class="clock-main">
@@ -22,8 +24,18 @@
         </div>
     </div>
 
-    <div class="widget placeholder-widget">
-        <span>Espaço Spotify</span>
+    <div class="widget spotify-widget" id="spotify-card">
+        <div class="spotify-header">NOW PLAYING</div>
+        <div class="spotify-content">
+            <img id="sp-cover" src="/static/images/default-cover.png" alt="Capa">
+            <div class="sp-info">
+                <h2 id="sp-title">Pausado</h2>
+                <h3 id="sp-artist">Inicie o Spotify</h3>
+                <div class="progress-container">
+                    <div id="sp-progress-bar"></div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </div>

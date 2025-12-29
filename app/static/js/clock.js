@@ -37,3 +37,37 @@ setInterval(updateTime, 1000); // Atualiza hora a cada segundo
 setInterval(updateInfo, 60000); // Atualiza clima/saudação a cada 1 minuto
 updateTime();
 updateInfo();
+
+async function updateSpotify() {
+    try {
+        const response = await fetch('/api/spotify/status');
+        const data = await response.json();
+
+        if (data.status === "unauthorized") {
+            // Se não estiver logado, procura o link de login
+            const authRes = await fetch('/api/spotify/login');
+            const authData = await authRes.json();
+            console.log("Por favor, autentique-se em: " + authData.auth_url);
+            return;
+        }
+
+        if (data.status === "playing") {
+            document.getElementById('sp-title').innerText = data.title;
+            document.getElementById('sp-artist').innerText = data.artist;
+            document.getElementById('sp-cover').src = data.cover;
+            
+            // Atualiza barra de progresso
+            const percent = (data.progress_ms / data.duration_ms) * 100;
+            document.getElementById('sp-progress-bar').style.width = percent + "%";
+        } else {
+            document.getElementById('sp-title').innerText = "Pausado";
+            document.getElementById('sp-artist').innerText = "À espera de música";
+        }
+    } catch (error) {
+        console.error("Erro no módulo Spotify:", error);
+    }
+}
+
+// Atualiza a cada 2 segundos para não sobrecarregar a API
+setInterval(updateSpotify, 2000);
+updateSpotify();

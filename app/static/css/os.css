@@ -88,3 +88,66 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
 }
+
+.spotify-widget {
+    background: #181818;
+    border-radius: 12px;
+    width: 380px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #282828;
+}
+
+.spotify-header {
+    font-size: 0.7rem;
+    color: #1DB954; /* Verde Spotify */
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.spotify-content {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+#sp-cover {
+    width: 100px;
+    height: 100px;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.sp-info {
+    flex: 1;
+    overflow: hidden;
+}
+
+#sp-title {
+    font-size: 1.1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+
+#sp-artist {
+    font-size: 0.9rem;
+    color: #b3b3b3;
+    margin: 5px 0 10px 0;
+}
+
+.progress-container {
+    height: 4px;
+    background: #404040;
+    border-radius: 2px;
+    width: 100%;
+}
+
+#sp-progress-bar {
+    height: 100%;
+    background: #1DB954;
+    width: 0%;
+    transition: width 0.5s linear;
+}
