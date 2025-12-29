@@ -1,0 +1,90 @@
+/* Importar fonte Tech/Code */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400;700&display=swap');
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #0d0d0d; /* Preto profundo */
+    color: #e0e0e0;
+}
+
+.desktop-grid {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* WIDGET RELÓGIO ESTILO INKYPI */
+.clock-widget {
+    background: #1a1a1a;
+    border-left: 5px solid #ffcc00; /* Detalhe Amarelo (Bee/Jataí) */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.clock-main {
+    font-size: 6rem; /* Gigante */
+    font-weight: 700;
+    line-height: 1;
+    color: #ffffff;
+    letter-spacing: -2px;
+    /* Faz os números ocuparem sempre o mesmo espaço para não pular */
+    font-feature-settings: "tnum"; 
+    font-variant-numeric: tabular-nums;
+}
+
+.blink {
+    animation: blinking 1s infinite;
+    color: #444;
+}
+
+@keyframes blinking {
+    0% { opacity: 1; }
+    50% { opacity: 0.2; }
+    100% { opacity: 1; }
+}
+
+.clock-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 10px;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+}
+
+.date-box {
+    display: flex;
+    flex-direction: column;
+}
+
+#date-weekday {
+    font-size: 1.2rem;
+    color: #ffcc00; /* Amarelo destaque */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#date-full {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.weather-box {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+}
+
+#weather-temp {
+    font-size: 1.5rem;
+    font-weight: bold;
+}

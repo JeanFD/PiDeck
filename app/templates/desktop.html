@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="desktop-grid">
+    
+    <div class="widget clock-widget">
+        <div class="clock-main">
+            <span id="time-hours">00</span><span class="blink">:</span><span id="time-min">00</span>
+        </div>
+        
+        <div class="clock-details">
+            <div class="date-box">
+                <span id="date-weekday">Segunda-feira</span>
+                <span id="date-full">01 de Janeiro</span>
+            </div>
+            
+            <div class="weather-box">
+                <span id="weather-icon">--</span>
+                <span id="weather-temp">--°C</span>
+                <small id="greeting-text">Carregando...</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="widget placeholder-widget">
+        <span>Espaço Spotify</span>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/clock.js"></script>
+{% endblock %}

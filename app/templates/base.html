@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <title>PiDeck OS</title>
+    <link rel="stylesheet" href="/static/css/os.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="logo">PiDeck <small>v0.2</small></div>
+        <div class="widgets">
+            <span id="sys-cpu">CPU: --%</span>
+            <span id="sys-clock">00:00</span>
+        </div>
+    </div>
+
+    <div class="desktop-area">
+        {% block content %}{% endblock %}
+    </div>
+
+    <script src="/static/js/core.js"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>
